@@ -4,12 +4,12 @@
   </div>
 
   <div>
-      <InputText v-model="description"/>
-      <Button @click="salveTodo">Salvar</Button>
+      <InputText v-model="description"/>      
   </div>
 
-  <div>
-    <Button @click="cancel">Voltar</Button>     
+  <div class="div-botoes">
+    <Button class="btn-voltar" @click="cancel">Voltar</Button>     
+    <Button @click="salveTodo">Salvar</Button>
   </div>
 </template>
 
@@ -34,5 +34,11 @@ export default {
 </script>
 
 <style scoped>
- 
+    .div-botoes {
+        margin-top: 1rem;
+    }
+
+    .btn-voltar {
+        margin-right: 1rem;
+    }
 </style>
