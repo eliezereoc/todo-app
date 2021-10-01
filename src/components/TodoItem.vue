@@ -22,12 +22,20 @@ export default {
           description: ""
       }
   },
+    props: {
+    todo: Object
+  }, 
+  created() {
+      if (this.todo) {
+          this.description = this.todo.description;
+      }
+  },
   methods: {
       cancel() {
           this.$emit('cancel');
       },
       salveTodo() {
-          this.$emit('salveTodo', {description: this.description});
+          this.$emit('salveTodo', { ...this.todo , description: this.description});
       }
   }
 }

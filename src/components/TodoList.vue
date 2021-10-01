@@ -2,8 +2,8 @@
   <div class="todo-list">
     <div class="todo-item" v-for="(todo, index) in todos" :key="index">
       <label class="todo-label" for=""> {{ todo.description }}</label>     
-      <Button icon="pi pi-pencil" class="p-button-rounded p-button-text"/> 
-      <Button icon="pi pi-trash" class="p-button-rounded p-button-text"/> 
+      <Button icon="pi pi-pencil" class="p-button-rounded p-button-text" @click="$emit('editTodo', index)"/> 
+      <Button icon="pi pi-trash" class="p-button-rounded p-button-text" @click="$emit('deleteTodo', index)"/> 
     </div>
   </div>
 </template>
